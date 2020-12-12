@@ -14,23 +14,26 @@ def get_id():
     os.mkdir(str(id))
     return str(id)
 
+def main():
+    print (host , port)
+    while True:
+     s.listen(1)
+     conn, addr = s.accept()
+     print('Connected by', addr)
+     try:
+            data = jsonpickle.loads(conn.recv(1024).decode())
+            print(data)
+            print(addr[0])
+            if data == b'get_id':
+                g_id = get_id()
+                conn.sendall(b'test',address=addr[0])
+            else:
+                print("Client Says: " + data)
+            #print ("Client Says: "+data)
+            #conn.sendall("Server Says:hi")
 
-print (host , port)
-while True:
- s.listen(1)
- conn, addr = s.accept()
- print('Connected by', addr)
- try:
-        data = jsonpickle.loads(conn.recv(1024).decode())
-        print(data)
-        print(addr[0])
-        if data == b'get_id':
-            g_id = get_id()
-            conn.sendall(b'test',address=addr[0])
-        else:
-            print("Client Says: " + data)
-        #print ("Client Says: "+data)
-        #conn.sendall("Server Says:hi")
+     except:
+           pass
 
- except:
-       pass
+if __name__ == '__main__':
+    main()
