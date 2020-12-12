@@ -20,9 +20,9 @@ while True:
  conn, addr = s.accept()
  print('Connected by', addr)
  try:
-        data = conn.recv(1024)
-        print(jsonpickle.loads(data.decode()))
-        if data.decode() == 'get_id':
+        data = jsonpickle.loads(conn.recv(1024))
+        print(data)
+        if data == 'get_id':
             g_id = get_id()
             conn.sendto(g_id.encode(),address=addr)
         else:
