@@ -22,8 +22,8 @@ def main():
      try:
             data = jsonpickle.loads(conn.recv(1024).decode())
             print(data)
-            print(addr[0])
             if data == b'get_id':
+                print(1)
                 get_id()
                 conn.sendall(b'test',address=addr[0])
             else:
