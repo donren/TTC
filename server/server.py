@@ -10,7 +10,10 @@ s.bind((host, port))
 def get_id():
     id = "1"
     print("debug")
-    os.mkdir(str(id))
+    try:
+        os.mkdir(str(id))
+    except:
+        pass
     return str(id)
 
 def main():
