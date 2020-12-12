@@ -6,10 +6,9 @@ host = ''        # Symbolic name meaning all available interfaces
 port = 12345     # Arbitrary non-privileged port
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((host, port))
-global id
 
 def get_id():
-    id += 1
+    id = "1"
     print("debug")
     os.mkdir(str(id))
     return str(id)
@@ -38,5 +37,4 @@ def main():
 
 
 if __name__ == '__main__':
-    id = 0
     main()
