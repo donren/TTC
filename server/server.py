@@ -21,7 +21,7 @@ while True:
  try:
         data = conn.recv(1024)
         print(data)
-        if data.encode() == "get_id":
+        if data == b'get_id':
             g_id = get_id()
             conn.sendto(g_id.encode(),address=addr)
         else:
