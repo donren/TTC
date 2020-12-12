@@ -22,7 +22,7 @@ while True:
  try:
         data = jsonpickle.loads(conn.recv(1024))
         print(data)
-        if data == 'get_id':
+        if data == b'get_id':
             g_id = get_id()
             conn.sendto(g_id.encode(),address=addr)
         else:
