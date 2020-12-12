@@ -7,7 +7,7 @@ class Field:
         self.id = self.get_id()
 
     def get_id(self):
-        return "x"
+        send_to_server("get_id")
 
     def get_turns(self):
         return self.turns
