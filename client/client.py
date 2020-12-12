@@ -10,13 +10,6 @@ def send_to_server(msg,answer=False):
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     s.connect((host, port))
     s.sendall(msg.encode())
-    if answer:
-        while i < 5:
-            try:
-                s.listen(1)
-                data = s.recv(1024)
-            except:
-                pass
-            i+=1
+    data = s.recv(1024)
     s.close()
     return data

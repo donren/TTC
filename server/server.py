@@ -9,7 +9,6 @@ s.bind((host, port))
 
 def get_id():
     id = "1"
-    print("debug")
     try:
         os.mkdir(str(id))
     except:
@@ -26,9 +25,9 @@ def main():
             data = jsonpickle.loads(conn.recv(1024).decode())
             print(data)
             if data == b'get_id':
-                print(1)
                 get_id()
                 conn.sendto(b'test',addr)
+
             else:
                 print("Client Says: " + data)
             #print ("Client Says: "+data)
