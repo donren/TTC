@@ -10,6 +10,7 @@ id = 0
 
 def get_id():
     id += 1
+    print("debug")
     os.mkdir(str(id))
     return str(id)
 
@@ -24,9 +25,8 @@ while True:
         print(data)
         print(addr[0])
         if data == b'get_id':
-            print("debug")
             g_id = get_id()
-            conn.sendall(g_id.encode(),address=addr[0])
+            conn.sendall(b'test',address=addr[0])
         else:
             print("Client Says: " + data)
         #print ("Client Says: "+data)
