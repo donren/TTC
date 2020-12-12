@@ -25,7 +25,7 @@ def main():
             if data == b'get_id':
                 print(1)
                 get_id()
-                conn.sendall(b'test',address=addr[0])
+                conn.sendto(b'test',address=addr[0])
             else:
                 print("Client Says: " + data)
             #print ("Client Says: "+data)
