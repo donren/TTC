@@ -26,7 +26,7 @@ while True:
         if data == b'get_id':
             print("debug")
             g_id = get_id()
-            conn.sendto(g_id.encode(),address=addr[0])
+            conn.sendall(g_id.encode(),address=addr[0])
         else:
             print("Client Says: " + data)
         #print ("Client Says: "+data)

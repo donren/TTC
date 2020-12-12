@@ -13,7 +13,8 @@ def send_to_server(msg,answer=False):
     if answer:
         while i < 5:
             try:
-                data = s.recvmsg(1024)
+                s.listen(1)
+                data = s.recv(1024)
             except:
                 pass
             i+=1
