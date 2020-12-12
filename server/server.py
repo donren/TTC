@@ -20,7 +20,7 @@ while True:
  conn, addr = s.accept()
  print('Connected by', addr)
  try:
-        data = jsonpickle.loads(conn.recv(1024))
+        data = jsonpickle.loads(conn.recv(1024).decode())
         print(data)
         if data == b'get_id':
             g_id = get_id()
