@@ -6,7 +6,6 @@ host = ''        # Symbolic name meaning all available interfaces
 port = 12345     # Arbitrary non-privileged port
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.bind((host, port))
-id = 0
 
 def get_id():
     id += 1
@@ -25,7 +24,7 @@ def main():
             print(data)
             print(addr[0])
             if data == b'get_id':
-                g_id = get_id()
+                get_id()
                 conn.sendall(b'test',address=addr[0])
             else:
                 print("Client Says: " + data)
@@ -36,4 +35,5 @@ def main():
            pass
 
 if __name__ == '__main__':
+    id = 0
     main()
