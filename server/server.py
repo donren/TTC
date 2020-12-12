@@ -31,8 +31,10 @@ def main():
             #print ("Client Says: "+data)
             #conn.sendall("Server Says:hi")
 
-     except:
-           pass
+
+     except Exception as e:
+         print(e)
+
 
 if __name__ == '__main__':
     id = 0
