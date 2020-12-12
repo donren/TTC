@@ -10,7 +10,7 @@ id = 0
 
 def get_id():
     id += 1
-    os.mkdir("..//data//{}".format(id))
+    os.mkdir(os.path.join("..//data//",str(id)))
     return id
 
 
