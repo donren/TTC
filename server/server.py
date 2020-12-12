@@ -20,7 +20,7 @@ while True:
  print('Connected by', addr)
  try:
         data = conn.recv(1024)
-        if data == "get_id":
+        if data == b"get_id":
             g_id = get_id()
             conn.sendto(g_id.encode(),address=addr)
         else:
